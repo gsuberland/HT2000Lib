@@ -95,7 +95,7 @@ co2 = ((log[4] << 8) << 8) + log[3];
 
 The temperature and humidity values are scaled in the same way as in the status report. The CO2 value is in PPM.
 
-The time of each log entry is calculated based on the configured logging timestep and the timestamp from the status report. I do not currently know how to retrieve the configured logging timestep from the device.
+The time of each log entry is *likely* calculated based on the configured logging timestep (i.e. how frequently a measurement is logged) and the current timestamp from the status report. I do not currently know how to retrieve the configured logging timestep from the device. Another possibility is that there's another report that provides information on log timings, either as deltas or as tuples of timestamps and log indices, allowing the device to report discontinuities (i.e. blank data when the device was off) in the time domain. I'm not sure if this is something the device can do, though.
 
 ## License
 
